@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<title>DEAR THEO</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&family=Press+Start+2P&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<style type="text/css">
+			body {
+				font-family: 'Montserrat', sans-serif;
+				font-family: 'Press Start 2P', cursive;
+				text-align:center;
+				position: relative;
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+			}
+			img {
+				margin-top: 40px;
+				height: 100px;
+			}
+			h1 {
+				display: block;
+				margin-top: 7px;
+				font-size: 22px;
+			}
+			p {
+				margin-top: 60px;
+				display: block;
+				font-size: 50px;
+			}
+			.container {
+				margin-top: -60px;
+			}
+		</style>
+		<div class="container">
+			<img src="./apple.png" alt="apple">
+			<h1>DEAR THEO</h1>
+			<p id="countdown"></p>
+		</div>
+		<script>
+			const locker = "MDkwOQ==";
+			var countDownDate = new Date("Nov 3, 2022 11:00:00").getTime();
+			var x = setInterval(function() {
+			  var now = new Date().getTime();
+			  var distance = countDownDate - now;
+			  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			  document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+			  if (distance < 0) {
+			    clearInterval(x);
+			    document.getElementById("countdown").innerHTML = decodeURIComponent(escape(window.atob(locker)));;
+			  }
+			}, 1000);
+		</script>
+	</body>
+</html>
