@@ -44,7 +44,6 @@
 			<p id="countdown">loading...</p>
 		</div>
 		<script>
-			const locker = "OTA5";
 			var countDownDate = new Date("Nov 4, 2022 20:00:00").getTime();
 			var x = setInterval(function() {
 			  var now = new Date().getTime();
@@ -56,7 +55,7 @@
 			  document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
 			  if (distance < 0) {
 			    clearInterval(x);
-			    document.getElementById("countdown").innerHTML = decodeURIComponent(escape(window.atob(locker)));;
+			    document.getElementById("countdown").innerHTML = "🖤";
 			  }
 			}, 1000);
 		</script>
